@@ -6,4 +6,7 @@ Neste desafio devemos criar uma página para apresentar o [Stomatopoda](https://
 
 A página deve conter no `header` o `title` "Soco a 80km/h: Conheça o Stomatopoda. Continuando com um conjunto de `links` (Página Inicial, Sobre, Contato). No `article` deve conter os fatos interesantes sobre o Stomatopoda. Este artigo deve ter `sections` divididas informações gerais sobre o animal e fatos interessantes, subtítulos sobre os fatos escolhidos, destaques, imagens, bibliográfias e rodapé.
 
+#### Obs: 
+Para esse exercício, é obrigatório fazer uso de no mínimo elementos com as seguintes tags: `header`, `nav`, `article`, `section`, `h1`, `h2`, `h3`, `aside`, `footer`, `table` e `img`.
+
 Após a criação da página é importante fazer a validação de acessibilidade da página.
