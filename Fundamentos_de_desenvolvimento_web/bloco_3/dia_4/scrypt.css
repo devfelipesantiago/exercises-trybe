@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.navegation {
+  display: inline;
+  margin: 10px;
+}
+
+.head {
+  background-image: url(/free-seabed-vector.webp);
+  padding: 20px;
+  margin-bottom: 30px;
+  background-position: 50% 25%;
+  height: 250px;
+}
+
+.head h1 {
+  margin: 150px;
+  text-align: center;
+  font-size: 40px;
+  color: aliceblue;
+}
+
+.article {
+  margin: auto;
+  max-width: 50%;
+  background-color: aqua;
+  padding: 20px;
+}
+
+.article h2 {
+  text-align: center;
+  margin: 20px;
+  font-size: 25px;
+}
+
+.article h3 {
+  margin: 20px;
+  font-size: 22px;
+}
+
+.article p {
+  /*text-align: justify;*/
+  padding: 10px;
+  font-size: 20px;
+}
+
+.article img {
+  width: 100%;
+}
+
+.table {
+  border: black;
+  border-style: double;
+  width: 236px;
+  height: 158px;
+  margin-top: 20px;
+  margin-left: 10px;
+  float: left;
+}
+
+.bbgf {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer {
+  background-color: rgba(126, 126, 129, 0.349);
+  padding: 20px;
+}
