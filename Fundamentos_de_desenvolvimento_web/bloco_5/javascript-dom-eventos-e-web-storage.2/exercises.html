@@ -63,7 +63,11 @@
 
       let son1 = document.createElement('div')
       son1.className = 'main-content'
-      document.body.appendChild(son1)
+      document.body.appendChild(son1);
+      
+      let sonOfson = document.createElement('div')
+      sonOfson.className = 'center-content'
+      son1.appendChild(sonOfson);
       
     </script>
   </body>
