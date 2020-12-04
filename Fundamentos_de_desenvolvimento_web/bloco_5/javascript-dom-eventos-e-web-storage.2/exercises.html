@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //Exercises 1 Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body 
+      let titleh1 = document.createElement('h1') 
+      titleh1.innerText = 'Exercício 5.2 - JavaScript DOM';
+      document.body.appendChild(titleh1);
+
+      //Exercises 2 Adicione a tag div com a classe main-content como filho da tag body 
+      let son1 = document.createElement('div')
+      son1.className = 'main-content'
+      document.body.appendChild(son1);
+
+      //Exercises 3 Adicione a tag div com a classe center-content como filho da tag div criada no passo 2
+      let sonOfson = document.createElement('div')
+      sonOfson.className = 'center-content'
+      son1.appendChild(sonOfson);
+
+      //Exercises 4 Adicione a tag p como filho do div criado no passo 3 e coloque algum texto
+      let paragraph = document.createElement('p')
+      paragraph.innerText = 'Segura nóis!!!'
+      sonOfson.appendChild(paragraph);      
+
+      //Exercises 5 Adicione a tag div com a classe left-content como filho da tag div criada no passo 2
+      let leftBox = document.createElement('div')
+      leftBox.className = 'left-content'
+      son1.appendChild(leftBox);
+
+      //Exercises 6 Adicione a tag div com a classe right-content como filho da tag div criada no passo 2
+      let rightBox = document.createElement('div')
+      rightBox.className = 'right-content'
+      son1.appendChild(rightBox);
+
+      //Exercises 7 Adicione a tag div com a classe right-content como filho da tag div criada no passo 2
+      let image = document.createElement('img')
+      image.src = "https://picsum.photos/200"
+      image.className = 'small-image'
+      leftBox.appendChild(image);
+      
+      //Exercises 8 Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6
+      let elementList = document.createElement('ul')
+      rightBox.appendChild(elementList)
+      let arrayList = ['Um', 'Dois', 'Três', 'Quatro', 'Cinto', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez']      
+      
+      for (let index = 0; index < arrayList.length; index += 1) {
+        let numbers = arrayList[index];
+
+        let lineList = document.createElement('li')
+        elementList.appendChild(lineList)
+        lineList.innerText = numbers
+      }
+
+      //Exercises 9 Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2
+      for (let index = 1; index <= 3; index += 1) {
+        let elementH3 = document.createElement('h3')
+        elementH3.innerText = 'Funfo ' + index
+        son1.appendChild(elementH3)        
+      }     
+
+      //Bônus
+      document.querySelector('h1').className = 'title'
+
+      let elementH3 = document.getElementsByTagName('h3')
+      for (let index = 0; index <= 3; index+=1) {
+        elementH3[index].className = 'description';
+      }
+
+    </script>
+  </body>
+</html>
