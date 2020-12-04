@@ -89,10 +89,23 @@
 
       //Exercises 7 Adicione a tag div com a classe right-content como filho da tag div criada no passo 2
       let image = document.createElement('img')
-      image.innerText = 'src="https://picsum.photos/200"'
+      image.src = "https://picsum.photos/200"
       image.className = 'small-image'
       leftBox.appendChild(image);
       
+      //Exercises 8 Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6
+      let elementList = document.createElement('ul')
+      rightBox.appendChild(elementList)
+      let arrayList = ['Um', 'Dois', 'Três', 'Quatro', 'Cinto', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez']      
+      
+      for (let index = 0; index < arrayList.length; index += 1) {
+        let numbers = arrayList[index];
+
+        let lineList = document.createElement('li')
+        elementList.appendChild(lineList)
+        lineList.innerText = numbers
+      }
+
     </script>
   </body>
 </html>
