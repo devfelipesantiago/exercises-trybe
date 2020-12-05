@@ -69,8 +69,11 @@ function createDayOfMonth() {
   for (let index = 0; index < dezDaysList.length; index += 1) {  
   let day = document.createElement("li");
   day.textContent = dezDaysList[index];
+  day.className = 'day'
   days.appendChild(day);
-  }
+
+  if (dezDaysList[index] === 24 || dezDaysList[index] === 25 || dezDaysList[index] === 31) {day.className = 'day holiday'}
+ }
 }
 createDayOfMonth();
 
@@ -89,3 +92,10 @@ function buttonHoliday(parament) {
   btnCont.appendChild(button);
 }
 buttonHoliday('Feriados');
+
+// Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday" .
+// É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor "rgb(238,238,238)" .
+
+function clickHoliday() {
+  
+}
