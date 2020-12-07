@@ -8,6 +8,7 @@ window.onload = function () {
   zoomDayOn();
   zoomDayOff();
   customTask('Games!');
+  legendTask('green')
 };
 const dezDaysList = [
   29,
@@ -159,3 +160,12 @@ function customTask(params) {
   task.innerText = params;
   myTask.appendChild(task);
 }
+
+function legendTask(color) {
+  let divTask = document.createElement('div');
+  let myTask = document.querySelector('.my-tasks');
+
+  divTask.style.backgroundColor = color;
+  myTask.appendChild(divTask);
+}
+
