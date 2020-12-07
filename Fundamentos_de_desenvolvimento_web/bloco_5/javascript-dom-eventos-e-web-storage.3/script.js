@@ -7,6 +7,7 @@ window.onload = function () {
   clickFriday();
   zoomDayOn();
   zoomDayOff();
+  customTask('Games!');
 };
 const dezDaysList = [
   29,
@@ -136,8 +137,6 @@ function clickFriday() {
   }
 }
 
-// Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
-
 function zoomDayOn() {
   let dayZoom = document.querySelector("#days");
   dayZoom.addEventListener("mouseover", function (event) {
@@ -152,4 +151,11 @@ function zoomDayOff() {
     event.target.style.fontSize = "20px";
     event.target.style.fontWeight = "200";
   });
+}
+
+function customTask(params) {
+  let task = document.createElement('span');
+  let myTask = document.querySelector('.my-tasks')
+  task.innerText = params;
+  myTask.appendChild(task);
 }
