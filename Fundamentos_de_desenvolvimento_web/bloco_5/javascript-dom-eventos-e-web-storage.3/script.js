@@ -1,3 +1,17 @@
+window.onload = function () {
+  createDaysOfTheWeek();
+  createDaysOfMonth();
+  buttonHoliday("Feriados");
+  clickToColor();
+  buttonFriday("Sexta-feira");
+  clickFriday();
+  zoomDayOn();
+  zoomDayOff();
+  customTask('Games!');
+  legendTask('green');
+  paintTask('green');
+  colorDay();
+};
 const dezDaysList = [
   29,
   30,
@@ -54,18 +68,9 @@ function createDaysOfTheWeek() {
     weekDaysList.appendChild(dayListItem);
   }
 }
-createDaysOfTheWeek();
-
-// O array dezDaysList contém os dois últimos dias de novembro e os dias do mês de dezembro. Desenvolva uma função que crie dinamicamente cada dia do calendário e os adicione como filhos/filhas da tag <ul> com ID "days" . Note que os dias 29 e 30 de novembro estão no array pois representam respectivamente Segunda-feira e Terça-feira.
-
-// Os dias devem estar contidos em uma tag <li> , e todos devem ter a classe day . Ex: <li class="day">3</li>
-
-// Os dias 24, 25 e 31 são feriados e, além da classe day , devem conter também a classe holiday . Ex: <li class="day holiday">24</li>
-
-// Os dias 4, 11, 18 e 25 são Sexta-feira. Eles devem conter a classe day e a classe friday . Ex: <li class="day friday">4</li>
-let days = document.querySelector("#days");
-
 function createDaysOfMonth() {
+  let days = document.querySelector("#days");
+
   for (let index = 0; index < dezDaysList.length; index += 1) {
     let day = document.createElement("li");
     day.textContent = dezDaysList[index];
@@ -87,13 +92,6 @@ function createDaysOfMonth() {
     }
   }
 }
-createDaysOfMonth();
-
-// Implemente uma função que receba como parâmetro a string "Feriados" e crie dinamicamente um botão com o nome "Feriados".
-
-// Adicione a este botão a ID "btn-holiday" .
-
-// Adicione este botão como filho/filha da tag <div> com classe "buttons-container".
 
 function buttonHoliday(parament) {
   let button = document.createElement("button");
@@ -103,35 +101,100 @@ function buttonHoliday(parament) {
   let btnCont = document.querySelector(".buttons-container");
   btnCont.appendChild(button);
 }
-buttonHoliday("Feriados");
-
-// Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday" .
-// É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor "rgb(238,238,238)" .
-
-let btnHoliday = document
-  .querySelector("#btn-holiday")
-  .addEventListener("click", clickToColor);
 function clickToColor() {
+  let btnHoliday = document
+    .querySelector("#btn-holiday")
+    .addEventListener("click", clickToColor);
   let holiday = document.querySelectorAll(".holiday");
 
   for (let index = 0; index < holiday.length; index++) {
-    holiday[index].style.backgroundColor = "green";
-
-    //if (holiday[index].style.backgroundColor === "green") {        
-    //    holiday[index].style.backgroundColor = "rgb(238,238,238)";
-    //}    
+    if (holiday[index].style.backgroundColor === "black") {
+      holiday[index].style.backgroundColor = "rgb(238,238,238)";
+    } else {
+      holiday[index].style.backgroundColor = "black";
+    }
   }
 }
 
-// Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
-// Adicione a este botão o ID "btn-friday".
-// Adicione este botão como filho/filha da tag <div> com classe "buttons-container".
-
 function buttonFriday(params) {
-  let button = document.createElement('button')
+  let button = document.createElement("button");
   button.textContent = params;
-  let bynContainer = document.querySelector('.buttons-container');
+  let bynContainer = document.querySelector(".buttons-container");
   bynContainer.appendChild(button);
-  button.id = 'btn-friday';
+  button.id = "btn-friday";
 }
-buttonFriday('Sexta-feira');
+
+function clickFriday(string) {
+  let friday = document
+    .getElementById("btn-friday")
+    .addEventListener("click", clickFriday);
+  let fridayList = document.querySelectorAll(".friday");
+  let oldDate = [4, 11, 18, 25];
+
+  for (let index = 0; index < fridayList.length; index++) {
+    if (fridayList[index].textContent === "Sexta-feira") {
+      fridayList[index].textContent = oldDate[index];
+    } else {
+      fridayList[index].textContent = "Sexta-feira";
+    }
+  }
+}
+
+function zoomDayOn() {
+  let dayZoom = document.querySelector("#days");
+  dayZoom.addEventListener("mouseover", function (event) {
+    event.target.style.fontSize = "40px";
+    event.target.style.fontWeight = "600";
+  });
+}
+
+function zoomDayOff() {
+  let dayZoom = document.querySelector("#days");
+  dayZoom.addEventListener("mouseout", function (event) {
+    event.target.style.fontSize = "20px";
+    event.target.style.fontWeight = "200";
+  });
+}
+
+function customTask(params) {
+  let task = document.createElement('span');
+  let myTask = document.querySelector('.my-tasks')
+  task.innerText = params;
+  myTask.appendChild(task);
+}
+
+function legendTask(color) {
+  let divTask = document.createElement('div');
+  let myTask = document.querySelector('.my-tasks');
+
+  divTask.className = 'task';
+  divTask.style.backgroundColor = color;
+  myTask.appendChild(divTask);
+}
+
+function paintTask(color) {
+  let selectedTask = document.querySelector('.task');
+  
+  selectedTask.addEventListener('click', function (event) {
+    
+    if (selectedTask.className === 'task') {
+      selectedTask.className = 'task selected';
+    } else {
+      selectedTask.className = 'task';
+    }
+  })
+}
+
+function colorDay() {
+  let paintDay = document.querySelector('#days');
+  let divColor = document.querySelector('.task');
+  
+  function color(event) {
+    if (divColor.className === 'task selected') {
+      event.target.style.color = divColor.style.backgroundColor;
+    } else {
+      event.target.style.color = 'rgb(119,119,119)';
+    }
+  }
+  paintDay.addEventListener('click', color)  
+}
