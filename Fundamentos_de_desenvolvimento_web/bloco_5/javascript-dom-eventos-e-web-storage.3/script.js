@@ -8,7 +8,9 @@ window.onload = function () {
   zoomDayOn();
   zoomDayOff();
   customTask('Games!');
-  legendTask('green')
+  legendTask('green');
+  paintTask('green');
+  colorDay();
 };
 const dezDaysList = [
   29,
@@ -122,12 +124,12 @@ function buttonFriday(params) {
   button.id = "btn-friday";
 }
 
-function clickFriday() {
+function clickFriday(string) {
   let friday = document
     .getElementById("btn-friday")
     .addEventListener("click", clickFriday);
   let fridayList = document.querySelectorAll(".friday");
-  const oldDate = [4, 11, 18, 25];
+  let oldDate = [4, 11, 18, 25];
 
   for (let index = 0; index < fridayList.length; index++) {
     if (fridayList[index].textContent === "Sexta-feira") {
@@ -141,7 +143,7 @@ function clickFriday() {
 function zoomDayOn() {
   let dayZoom = document.querySelector("#days");
   dayZoom.addEventListener("mouseover", function (event) {
-    event.target.style.fontSize = "30px";
+    event.target.style.fontSize = "40px";
     event.target.style.fontWeight = "600";
   });
 }
@@ -165,7 +167,34 @@ function legendTask(color) {
   let divTask = document.createElement('div');
   let myTask = document.querySelector('.my-tasks');
 
+  divTask.className = 'task';
   divTask.style.backgroundColor = color;
   myTask.appendChild(divTask);
 }
 
+function paintTask(color) {
+  let selectedTask = document.querySelector('.task');
+  
+  selectedTask.addEventListener('click', function (event) {
+    
+    if (selectedTask.className === 'task') {
+      selectedTask.className = 'task selected';
+    } else {
+      selectedTask.className = 'task';
+    }
+  })
+}
+
+function colorDay() {
+  let paintDay = document.querySelector('#days');
+  let divColor = document.querySelector('.task');
+  
+  function color(event) {
+    if (divColor.className === 'task selected') {
+      event.target.style.color = divColor.style.backgroundColor;
+    } else {
+      event.target.style.color = 'rgb(119,119,119)';
+    }
+  }
+  paintDay.addEventListener('click', color)  
+}
