@@ -190,10 +190,10 @@ function colorDay() {
   let divColor = document.querySelector('.task');
   
   function color(event) {
-    if (divColor.className === 'task selected') {
-      event.target.style.color = divColor.style.backgroundColor;
+    if (divColor.className !== 'task selected') {
+      event.target.style.color = 'rgb(119,119,119)';      
     } else {
-      event.target.style.color = 'rgb(119,119,119)';
+      event.target.style.color = divColor.style.backgroundColor;
     }
   }
   paintDay.addEventListener('click', color)  
