@@ -24,8 +24,27 @@
         <input id="full-name" type="text" />
       </div>
 
-      <!-- Descrição da palestra-->
-      <div class="line-content"></div>
+      <!-- Tipo de palestra-->
+      <div class="line-content">
+        <fieldset class="fieldset-talk-type">
+          <legend>Tipo de Palestra</legend>
+          <input
+            value="main-stage"
+            type="radio"
+            name="talk-type"
+            id="talk-type-stage"
+          />
+          <label for="talk-type-stage">Palco Principal</label>
+
+          <input
+            type="radio"
+            name="talk-type"
+            id="talk-type-workshop"
+            value="workshop"
+          />
+          <label for="talk-type-workshop">Workshop</label>
+        </fieldset>
+      </div>
     </form>
   </body>
 </html>
