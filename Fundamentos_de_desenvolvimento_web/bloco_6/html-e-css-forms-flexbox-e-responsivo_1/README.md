@@ -1,10 +1,10 @@
-#Criando um formulário de currículo.
+###Criando um formulário de currículo.
 
-## Crie um arquivo HTML chamado form.html para o formulário. Caso julgue necessário, crie estilos CSS para o seu formulário, de acordo com a sua imaginação. Coloque-os em um arquivo styles.css .
+# Crie um arquivo HTML chamado form.html para o formulário. Caso julgue necessário, crie estilos CSS para o seu formulário, de acordo com a sua imaginação. Coloque-os em um arquivo styles.css .
 
-## Crie também um arquivo script.js para seu código JavaScript . Vamos criar um formulário de cadastro de currículo com base na especificação a seguir:
+# Crie também um arquivo script.js para seu código JavaScript . Vamos criar um formulário de cadastro de currículo com base na especificação a seguir:
 
-### Crie um <fieldset> para os seguintes dados pessoais:
+## Crie um <fieldset> para os seguintes dados pessoais:
 
 Nome - Texto
 Limite de 40 caracteres
