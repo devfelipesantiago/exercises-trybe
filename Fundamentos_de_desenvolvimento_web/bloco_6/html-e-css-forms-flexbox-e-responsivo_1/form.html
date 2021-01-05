@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="content">
+      <h1>Formulário de currículo</h1>
+    </header>
+
+    <form class="content">
+      <fieldset class="field-personal-data">
+        <h2>Dados pessoais</h2>
+        <div class="box-content">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            placeholder="Digite seu nome"
+            maxlength="40"
+          />
+        </div>
+        <div class="box-content">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" maxlength="50" required />
+        </div>
+        <div class="box-content">
+          <label for="cpf">CPF</label>
+          <input type="text" name="cpf" id="cpf" required maxlength="11" />
+        </div>
+        <div class="box-content">
+          <label for="adress">Enderço</label>
+          <input
+            type="text"
+            name="adress"
+            id="adress"
+            required
+            maxlength="200"
+          />
+        </div>
+
+        <div class="box-content">
+          <label for="city">Cidade</label>
+          <input type="text" name="city" id="city" required maxlength="28" />
+        </div>
+
+        <div class="box-content">
+          <span>Selecione o seu estado: </span>
+          <select name="state" id="state" class="list-state"></select>
+        </div>
+        <br />
+        <br />
+
+        <fieldset class="radio-content">
+          <legend>Tipo do imóvel</legend>
+          <input type="radio" name="House" id="house" required />
+          <label for="house">Casa</label>
+          <input type="radio" name="House" id="apartment" required />
+          <label for="apartment">Apartamento</label>
+        </fieldset>
+      </fieldset>
+
+      <fieldset class="jobs">
+        <h2>Dados do último emprego</h2>
+        
+      </p>Resumo do currículo</p>
+      <div class="box-content">
+        <textarea name="job" id="" maxlength="100" required></textarea>
+      </div>
+      <div class="box-content">
+        <label for="office">Cargo</label>
+        <input type="text" name="office" id="office" required maxlength="40">
+      </div>
+      <div class="box-content">
+        <label for="offce-description"> Descrição do cargo </label>
+        <input required maxlength="500" type="text" name="offce-description" id="offce-description">
+      </div>
+      <div class="box-content">
+        <label for="date">Data de ínicio</label>
+        <input type="date" name="date" id="date" required>
+      </div>
+        <div class="bnt">
+      <button type="reset">Apagar Formulário</button>
+      <button type="submit">Registrar</button>
+    </div>
+      </fieldset>
+    
+    </form>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

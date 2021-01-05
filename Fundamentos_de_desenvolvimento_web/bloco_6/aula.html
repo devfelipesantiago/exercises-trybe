@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="aula.css" />
   </head>
   <body>
-    <header class="speaker-form-header">
+    <header class="speaker-form-header box-style">
       <h1>Conferencia da T9</h1>
       <p>
         <em
@@ -16,5 +16,68 @@
         >
       </p>
     </header>
+
+    <form class="box-style" action="" method="get">
+      <!-- Nome -->
+      <div class="line-content">
+        <label for="full-name">Nome</label>
+        <input id="full-name" type="text" />
+      </div>
+
+      <!-- Tipo de palestra -->
+      <div class="line-content">
+        <fieldset class="fieldset-talk-type">
+          <legend>Tipo de Palestra</legend>
+          <input
+            value="main-stage"
+            type="radio"
+            name="talk-type"
+            id="talk-type-stage"
+          />
+          <label for="talk-type-stage">Palco Principal</label>
+
+          <input
+            type="radio"
+            name="talk-type"
+            id="talk-type-workshop"
+            value="workshop"
+          />
+          <label for="talk-type-workshop">Workshop</label>
+        </fieldset>
+      </div>
+
+      <!-- Info camisa -->
+      <div class="line-content">
+        <label for="t-shirt">Tamanho da camisa</label>
+        <select name="t-shirt" id="t-shirt">
+          <option value="p">Pequeno</option>
+          <option value="m">Médio</option>
+          <option value="g">Grande</option>
+          <option value="gg">Extra grande</option>
+        </select>
+      </div>
+
+      <!-- Descrição da Palestra -->
+
+      <div class="line-content">
+        <label for="abstract">Descrição da palestra</label>
+        <textarea
+          name="abstract"
+          id="abstract"
+          class="abstract-style"
+        ></textarea>
+      </div>
+
+      <!-- Disponibilidade -->
+      <div class="line-content">
+        <input type="checkbox" name="avaliability" id="avaliability" />
+        <span>Estou disponível nessa data!</span>
+      </div>
+
+      <!-- Botao de enviar -->
+      <div class="line-content">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
   </body>
 </html>
