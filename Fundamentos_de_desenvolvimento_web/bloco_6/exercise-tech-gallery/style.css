@@ -6,15 +6,11 @@
 }
 
 header {
+  align-items: center;
+  background-color: blueviolet;
+  color: aliceblue;
   display: flex;
-}
-
-section {
-  display: flex;
-}
-
-footer {
-  display: flex;
+  justify-content: space-evenly;
 }
 
 .header-img {
