@@ -19,8 +19,7 @@
     <form id="cv-form">
       <div class="form-row">
         <fieldset>
-          <div class="line-content">
-            <label for="name">Nome: </label>
+          <div class="form-floating mb-3">
             <input
               class="form-control"
               type="text"
@@ -29,31 +28,38 @@
               maxlength="40"
               required
             />
+            <label for="name">Nome: </label>
           </div>
-          <div class="line-content">
-            <label for="email">Endereço de e-mail: </label>
-            <input
-              class="email-input form-control"
-              type="email"
-              name="email"
-              id="email"
-              maxlength="50"
-              required
-            />
+
+          <div class="row g-2">
+            <div class="col-md">
+              <div class="form-floating mb-3">
+                <input
+                class="form-control"
+                type="email"
+                name="email"
+                id="email"
+                maxlength="50"
+                required
+              />
+              <label for="email">Endereço de e-mail: </label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating mb-3">
+                  <input
+                class="form-control"
+                type="text"
+                name="cpf"
+                id="cpf-number"
+                maxlength="11"
+                required
+              />
+              <label for="cpf-number">CPF: </label>                
+              </div>
+            </div>
           </div>
-          <div class="line-content">
-            <label for="cpf-number">CPF: </label>
-            <input
-              class="form-control"
-              type="text"
-              name="cpf"
-              id="cpf-number"
-              maxlength="11"
-              required
-            />
-          </div>
-          <div class="line-content">
-            <label for="address">Endereço: </label>
+          <div class="form-floating mb-3">
             <input
               class="form-control"
               type="text"
@@ -62,63 +68,84 @@
               maxlength="200"
               required
             />
-          </div>
-          <div class="line-content">
-            <label for="city">Cidade: </label>
-            <input
-              class="form-control"
-              type="text"
-              name="city"
-              id="city"
-              maxlength="200"
-              required
-            />
-          </div>
-          <div class="line-content">
-            <label for="state">Estado: </label>
-            <select
-              class="form-select"
-              name="state"
-              id="state"
-              value=""
-              required
-            ></select>
-          </div>
-          <div class="line-content">
-            <label for="house-apartment">Tipo de imóvel: </label>
-            <input
-              type="radio"
-              name="house-apartment"
-              id="house"
-              value="house"
-              required
-            />
-            <span>Casa</span>
-            <input
-              type="radio"
-              name="house-apartment"
-              id="apartment"
-              value="apartment"
-              required
-            />
-            <span>Apartamento</span>
+            <label for="address">Endereço: </label>
+           </div>
+
+           <div class="row g-2">
+            <div class="col-md">
+              <div class="form-floating">
+                 <input
+                class="form-control"
+                type="text"
+                name="city"
+                id="city"
+                maxlength="200"
+                required
+                />
+                <label for="city">Cidade: </label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <select
+                class="form-select form-select-sm"
+                name="state"
+                id="state"
+                value=""
+                required
+              ></select>
+              <label for="state">Estado: </label>               
+              </div>
+            </div>
+          </div>        
+
+         
+         <div class="mb-3"></div>
+            <div class="form-check-inline mb-3" >
+              <label for="house-apartment">Tipo de imóvel: </label>
+              <input
+                class="form-check-input btn-check"
+                type="radio"
+                name="house-apartment"
+                id="house"
+                value="house"
+                required
+              />
+              <label
+                for="house"
+                class="form-check-label btn btn-outline-primary"
+                >Casa</label
+              >
+              <input
+                class="form-check-input btn-check"
+                type="radio"
+                name="house-apartment"
+                id="apartment"
+                value="apartment"
+                required
+              />
+              <label
+                for="apartment"
+                class="form-check-label btn btn-outline-primary"
+                >Apartamento</label
+              >
+            </div>
           </div>
         </fieldset>
         <fieldset>
-          <div class="line-content">
-            <label for="cv-resume">Resumo do currículo: </label>
+          <div class="form-floating mb-3">
             <textarea
               class="form-control"
               id="cv-resume"
               name="cv-resume"
               maxlength="1000"
               cols="100"
-              rows="20"
+              style="height: 200px"
               required
             ></textarea>
+            <label for="cv-resume">Resumo do currículo: </label>
           </div>
-          <div class="line-content">
-            <label for="position">Cargo: </label>
+          <div class="form-floating mb-3">
             <input
               class="form-control"
               type="text"
@@ -127,9 +154,9 @@
               maxlength="40"
               required
             />
+            <label for="position">Cargo: </label>
           </div>
-          <div class="line-content">
-            <label for="description">Descrição do cargo: </label>
+          <div class="form-floating mb-3">
             <input
               class="form-control"
               type="text"
@@ -137,9 +164,9 @@
               name="description"
               required
             />
+            <label for="description">Descrição do cargo: </label>
           </div>
-          <div class="line-content">
-            <label for="start-date">Data de início: </label>
+          <div class="form-floating mb-3">
             <input
               class="form-control"
               type="text"
@@ -148,10 +175,11 @@
               value=""
               required
             />
+            <label for="start-date">Data de início: </label>
           </div>
         </fieldset>
-        <button class="submit-button" type="button">Enviar</button>
-        <button class="clear-button" type="button">Limpar</button>
+        <button class="submit-button btn-primary" type="button">Enviar</button>
+        <button class="clear-button btn-outline-primary" type="button">Limpar</button>
       </div>
     </form>
     <section class="form-data"></section>
