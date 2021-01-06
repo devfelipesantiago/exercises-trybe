@@ -11,14 +11,15 @@
       <h1>Formulário de currículo</h1>
     </header>
 
-    <form class="content">
+    <form name='forms' class="content" action="">
       <fieldset class="field-personal-data">
         <h2>Dados pessoais</h2>
         <div class="box-content">
           <label for="name">Name</label>
           <input
+          class="input"
             type="text"
-            name="name"
+            name="tx_name"
             id="name"
             required
             placeholder="Digite seu nome"
@@ -27,15 +28,16 @@
         </div>
         <div class="box-content">
           <label for="email">Email</label>
-          <input type="text" name="email" id="email" maxlength="50" required />
+          <input class="input" type="text" name="email" id="email" maxlength="50" required />
         </div>
         <div class="box-content">
           <label for="cpf">CPF</label>
-          <input type="text" name="cpf" id="cpf" required maxlength="11" />
+          <input class="input" type="text" name="cpf" id="cpf" required maxlength="14" />
         </div>
         <div class="box-content">
           <label for="adress">Enderço</label>
           <input
+          class="input"
             type="text"
             name="adress"
             id="adress"
@@ -46,21 +48,21 @@
 
         <div class="box-content">
           <label for="city">Cidade</label>
-          <input type="text" name="city" id="city" required maxlength="28" />
+          <input  class="input" type="text" name="city" id="city" required maxlength="28" />
         </div>
 
         <div class="box-content">
           <span>Selecione o seu estado: </span>
-          <select name="state" id="state" class="list-state"></select>
+          <select class="input list-state" value='' name="state" id="state" ></select>
         </div>
         <br />
         <br />
 
         <fieldset class="radio-content">
           <legend>Tipo do imóvel</legend>
-          <input type="radio" name="House" id="house" required />
+          <input type="radio" name="house" id="house" value='Casa' required />
           <label for="house">Casa</label>
-          <input type="radio" name="House" id="apartment" required />
+          <input type="radio" name="house" id="apartment" value='Apartamento' required />
           <label for="apartment">Apartamento</label>
         </fieldset>
       </fieldset>
@@ -68,30 +70,32 @@
       <fieldset class="jobs">
         <h2>Dados do último emprego</h2>
         
-      </p>Resumo do currículo</p>
-      <div class="box-content">
-        <textarea name="job" id="" maxlength="100" required></textarea>
-      </div>
-      <div class="box-content">
-        <label for="office">Cargo</label>
-        <input type="text" name="office" id="office" required maxlength="40">
-      </div>
-      <div class="box-content">
-        <label for="offce-description"> Descrição do cargo </label>
-        <input required maxlength="500" type="text" name="offce-description" id="offce-description">
-      </div>
-      <div class="box-content">
-        <label for="date">Data de ínicio</label>
-        <input type="date" name="date" id="date" required>
-      </div>
-        <div class="bnt">
-      <button type="reset">Apagar Formulário</button>
-      <button type="submit">Registrar</button>
-    </div>
-      </fieldset>
-    
+        </p>Resumo do currículo</p>
+        <br>
+        <div class="box-content">
+          <textarea class="input" name="job" id="" maxlength="100" required></textarea>
+        </div>
+        <div class="box-content">
+          <label for="office">Cargo</label>
+          <input class="input" type="text" name="of'fice" id="office" required maxlength="40">
+        </div>
+        <div class="box-content">
+          <label for="offce-description"> Descrição do cargo </label>
+          <input class="input" required maxlength="500" type="text" name="offce-description" id="offce_description">
+        </div>
+        <div class="box-content">
+          <label for="date">Data de ínicio</label>
+          <input class="input" type="date" name="date" id="date" required>
+        </div>
+          <div class="bnt">
+          <button class="input" type="reset"  >Apagar Formulário</button>
+          <button class="input" type="submit" id="register">Registrar</button>
+        </div>
+      </fieldset>    
     </form>
-    
+    <div class="info">
+
+    </div>    
     <script src="script.js"></script>
   </body>
 </html>
