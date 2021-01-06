@@ -13,6 +13,14 @@ header {
   justify-content: space-evenly;
 }
 
+.paragraf {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
 .header-img {
   width: 70px;
 }
