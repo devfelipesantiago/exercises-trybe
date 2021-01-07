@@ -21,6 +21,36 @@ header {
   padding: 10px;
 }
 
+.img-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 520px;
+}
+
+.img {
+  background-color: rgb(232, 236, 243);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.img h4 {
+  color: rgba(204, 2, 255, 0.452);
+}
+
+hr {
+  border: solid 1px rgb(232, 236, 243);
+  margin: auto;
+  width: 8%;
+}
+
 .header-img {
   width: 70px;
 }
