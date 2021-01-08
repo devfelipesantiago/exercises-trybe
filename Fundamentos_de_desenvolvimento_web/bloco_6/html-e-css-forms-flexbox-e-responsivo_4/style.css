@@ -12,18 +12,19 @@ body {
 .header-container {
   background-color: #5c687c;
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: start;
 }
 
 .logo-container {
-  flex-basis: 268px;
+  width: 268px;
   display: flex;
   justify-content: center;
 }
 
 .menu-container {
+  order: 1;
   display: flex;
-  flex-basis: 500px;
+  width: 500px;
 }
 
 .menu-container ul {
