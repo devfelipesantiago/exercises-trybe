@@ -11,7 +11,7 @@ header {
   color: aliceblue;
   display: flex;
   justify-content: space-evenly;
-}
+} 
 
 .paragraf {
   text-align: center;
@@ -62,4 +62,10 @@ hr {
 .social-img {
   width: 25px;
   margin-left: 10px;
+}
+
+footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
 }
