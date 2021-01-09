@@ -9,9 +9,12 @@ body {
   margin: 10px;
 }
 h1 {
-  font-size: 18px;
+  font-size: 1.8em;
+  margin: 0.9em 0 0 0;
 }
 h2 {
+  font-size: 1.5em;
+  margin: 1.5em 0 0 0;
 }
 
 img {
@@ -20,7 +23,34 @@ img {
 
 figure {
   margin: 10px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.8em;
+}
+
+@media screen and (min-width: 660px) {
+  body {
+    background-color: cornflowerblue;
+  }
+
+  figure {
+    float: left;
+    width: 45%;
+    margin-right: 4.5%;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  body {
+    background: greenyellow;
+    margin: 25px 10%;
+    max-width: 1130px;
+  }
+
+  figure {
+    width: 30%;
+    margin-right: 2.5%;
+  }
 }
