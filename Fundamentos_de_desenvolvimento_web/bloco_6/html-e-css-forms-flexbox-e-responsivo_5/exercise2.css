@@ -16,10 +16,12 @@ html {
 
 header {
   background-color: #e84393;
-  border-bottom: 5px solid;
+  border-bottom: 5px solid whitesmoke;
   display: flex;
   flex-direction: column;
-  font-size: 22px;
+  font-size: 2rem;
+  font-family: fantasy;
+  font-style: oblique;
   text-align: center;
 }
 
@@ -28,7 +30,7 @@ header ul {
 }
 
 .aside-one {
-  border-bottom: solid 5px black;
+  border-bottom: solid 5px whitesmoke;
   background-color: #fd79a8;
   text-align: justify;
 }
@@ -44,4 +46,8 @@ header ul {
 aside ul {
   list-style: none;
   padding: 0;
+}
+
+.aside-two {
+  order: 1;
 }
