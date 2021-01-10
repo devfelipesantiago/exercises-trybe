@@ -2,7 +2,29 @@ html {
   box-sizing: border-box;
 }
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: lightpink;
+  border-bottom: 1px solid lightcoral;
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  text-align: center;
+}
+
+header p:hover {
+  color: palevioletred;
+}
+
+header ul {
+  display: none;
 }
