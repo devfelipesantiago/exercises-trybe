@@ -1,8 +1,3 @@
-let fatorial = (number) => {
-  if (number > 1) {
-    return number * fatorial(number - 1);
-  }
-  return number;
-};
-
+let fatorial = (number) =>
+  number > 1 ? number * fatorial(number - 1) : number;
 console.log(fatorial(50));
