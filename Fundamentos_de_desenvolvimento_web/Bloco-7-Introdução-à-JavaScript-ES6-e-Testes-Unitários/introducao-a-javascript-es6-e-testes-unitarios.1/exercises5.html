@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <button id='button'>Click me</button>
+
+    <script>
+      let number = 0;
+      let clickCount = document.querySelector('div');
+      
+      document.querySelector('#button')
+      .addEventListener('click', () => clickCount.innerHTML = '<p>'+ (number += 1) +'</p>')
+
+    </script>
+  </body>
+</html>
