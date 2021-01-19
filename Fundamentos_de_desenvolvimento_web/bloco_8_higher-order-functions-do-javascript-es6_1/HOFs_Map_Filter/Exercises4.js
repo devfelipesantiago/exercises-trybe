@@ -7,7 +7,7 @@ const books = [
     genre: 'Fantasia',
     author: {
       name: 'George R. R. Martin',
-      birthYear: 1948,
+      birthYear: 1948
     },
     releaseYear: 1991,
   },
@@ -47,7 +47,7 @@ const books = [
     genre: 'Terror',
     author: {
       name: 'Stephen King',
-      birthYear: 1947,
+      birthYear: 1947
     },
     releaseYear: 1986,
   },
@@ -64,16 +64,29 @@ const books = [
 ];
 
 const expectedResult = [
-  'As Crônicas de Gelo e Fogo - Fantasia - George R. R. Martin',
-  'O Senhor dos Anéis - Fantasia - J. R. R. Tolkien',
-  'Fundação - Ficção Científica - Isaac Asimov',
-  'Duna - Ficção Científica - Frank Herbert',
-  'A Coisa - Terror - Stephen King',
-  'O Chamado de Cthulhu - Terror - H. P. Lovecraft',
-];
+  {
+    id: 6,
+    name: 'O Chamado de Cthulhu',
+    genre: 'Terror',
+    author: { name: 'H. P. Lovecraft', birthYear: 1890 },
+    releaseYear: 1928
+  },
+  {
+    id: 3,
+    name: 'Fundação',
+    genre: 'Ficção Científica',
+    author: { name: 'Isaac Asimov', birthYear: 1920 },
+    releaseYear: 1951
+  },
+  {
+    id: 2,
+    name: 'O Senhor dos Anéis',
+    genre: 'Fantasia',
+    author: { name: 'J. R. R. Tolkien', birthYear: 1892 },
+    releaseYear: 1954
+  }
+]
 
-const formatedBookNames = () => books.map(
-    book => `${book.name} - ${book.genre} - ${book.author.name}`
-  );
+const oldBooks = () => books.filter(book => book.releaseYear < 2021 - 60).sort((a, b) => a.releaseYear - b.releaseYear);
 
-assert.deepStrictEqual(formatedBookNames(), expectedResult);
+assert.deepStrictEqual(oldBooks(), expectedResult);
