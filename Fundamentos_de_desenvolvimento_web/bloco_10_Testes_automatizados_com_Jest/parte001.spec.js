@@ -21,4 +21,5 @@ describe('Parte 1', () => {
     it('retorna a soma do parâmetro a com o', () => {
         expect(2).toEqual(sum(1, 1));
     });
+    test('o retorno de sum(4, 5) é 9', () => { expect(sum(4, 5)).toEqual(9); })
 });
