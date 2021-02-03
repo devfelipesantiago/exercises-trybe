@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 function sum(a, b) {
     if (typeof a !== 'number' || typeof b !== 'number') {
         throw new Error('parameters must be numbers');
@@ -21,5 +19,10 @@ describe('Parte 1', () => {
     it('retorna a soma do parâmetro a com o', () => {
         expect(2).toEqual(sum(1, 1));
     });
-    test('o retorno de sum(4, 5) é 9', () => { expect(sum(4, 5)).toEqual(9); })
+    test('o retorno de sum(4, 5) é 9', () => {
+        expect(sum(4, 5)).toEqual(9);
+    });
+    it('o retorno de sum(0, 0) é 0', () => {
+        expect(sum(0, 0)).toEqual(0);
+    });
 });
