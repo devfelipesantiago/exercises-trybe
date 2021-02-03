@@ -1,11 +1,4 @@
-function sum(a, b) {
-    if (typeof a !== 'number' || typeof b !== 'number') {
-        throw new Error('parameters must be numbers');
-    }
-
-    return a + b;
-}
-
+const sum = require('./parte001');
 /*
 A função sum(a, b) retorna a soma do parâmetro a com o b
 Teste se o retorno de sum(4, 5) é 9
@@ -23,6 +16,9 @@ describe('Parte 1', () => {
         expect(sum(4, 5)).toEqual(9);
     });
     it('o retorno de sum(0, 0) é 0', () => {
-        expect(sum(0, 0)).toEqual(0);
+        expect(sum(0, 0));
     });
+    test('lança um erro quando os parametros são string', () => {
+        expect(() => { sum(4, '5'); }).toThrow(/parameters must be numbers/);
+    })
 });
