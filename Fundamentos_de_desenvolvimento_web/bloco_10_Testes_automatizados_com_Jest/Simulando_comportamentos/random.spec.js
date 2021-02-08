@@ -17,3 +17,10 @@ test('Implementation div', () => {
   expect(random).toHaveBeenCalled();
   expect(random).toHaveBeenCalledTimes(2);
 })
+
+test('multiplication', () => {
+  random.mockImplementationOnce((a, b, c) => a * b * c);
+  expect(random(10, 2, 3)).toBe(60);
+  expect(random).toHaveBeenCalled();
+  expect(random).toHaveBeenCalledTimes(3);
+});
