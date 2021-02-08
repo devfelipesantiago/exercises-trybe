@@ -10,3 +10,10 @@ test('Random number', () => {
   expect(random).toHaveBeenCalled();
   expect(random).toHaveBeenCalledTimes(1);
 });
+
+test('Implementation div', () => {
+  random.mockImplementationOnce((a, b) => a / b);
+  expect(random(10, 2)).toBe(5);
+  expect(random).toHaveBeenCalled();
+  expect(random).toHaveBeenCalledTimes(2);
+})
