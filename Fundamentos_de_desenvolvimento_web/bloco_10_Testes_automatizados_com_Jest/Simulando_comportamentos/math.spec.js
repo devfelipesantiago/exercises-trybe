@@ -42,9 +42,11 @@ test('#dividir', () => {
 });
 
 test('subtrair restored', () => {
-  subtrair.mockReturnValue(20);
-  expect(subtrair()).toBe(20);
-  expect(subtrair).toHaveBeenCalledTimes(2);
+  const obj = { subtrair };
+  const subMock = jest.spyOn(obj, 'subtrair');
+  subMock.mockReturnValue(20);
+  expect(subMock()).toBe(20);
+  expect(subMock).toHaveBeenCalledTimes(2);
 
 });
 test('subtrair restored#', () => {
