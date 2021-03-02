@@ -1,4 +1,4 @@
-export default stateList = [
+const stateList = [
   '',
   'Acre(AC)',
   'Alagoas(AL)',
@@ -28,3 +28,5 @@ export default stateList = [
   'Sergipe(SE)',
   'Tocantins(TO)',
 ];
+
+export default stateList;
