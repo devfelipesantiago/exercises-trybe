@@ -32,11 +32,11 @@ describe('Tela de inserção do email', () => {
     const { getByLabelText, getByTestId } = render(<App />);
     const emailInput = getByLabelText('Email');
     const sendButton = getByTestId('id-send');
-    const userEmail = getByTestId('id-email-user');
 
     // Interagir com eles (se houver necessidade)
     fireEvent.change(emailInput, { target: { value: "felipe@teste.com" } });
     fireEvent.click(sendButton);
+    const userEmail = getByTestId('id-email-user');
 
     // Fazer os testes
     expect(emailInput.value).toBe('');
@@ -46,16 +46,13 @@ describe('Tela de inserção do email', () => {
   it('Verificando se o botão e o campo email estão funcionando.', () => {
     const { getByTestId, getByLabelText } = render(<App />);
     const EMAIL_USER = 'email@email.com';
-
-    const textEmail = findByTestId('id-email-user');
-    expect(textEmail).toBeInTheDocument();
-    expect(textEmail).toHaveTextContent('Valor:');
-
     const btnSend = getByTestId('id-send');
     const inputEmail = getByLabelText('Email');
     fireEvent.change(inputEmail, { target: { value: EMAIL_USER } });
     fireEvent.click(btnSend);
+    const textEmail = getByTestId('id-email-user');
     expect(inputEmail).toHaveValue('');
+    expect(textEmail).toBeInTheDocument();
     expect(textEmail).toHaveTextContent(`Valor: ${EMAIL_USER}`);
   });
 });
