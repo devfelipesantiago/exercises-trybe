@@ -17,18 +17,53 @@
     <button id="incrementBy10">Incremente 10</button>
   </div>
   <script>
+      const INCREMENT = 'INCREMENT';
+      const DECREMENT = 'DECREMENT';
+
     const counterReducer = (state = 0, action) => {
       switch (action.type) {
         case 'INCREMENT':
-          return state + 1;
+          return state + action.value;
         case 'DECREMENT':
-          return state - 1;
+          return state - action.value;
         default:
           return state;
       }
     };
+      const store = Redux.createStore(counterReducer);
 
-    const store = Redux.createStore(counterReducer);
+      const incrementButton = document.getElementById('increment');
+      incrementButton.addEventListener('click', () => {
+        const action = {
+          type: INCREMENT,
+          value: 1,
+        }
+        store.dispatch(action)
+      })
+
+      const decrementButton = document.getElementById('decrement');
+      decrementButton.addEventListener('click', () => {
+        const action = {
+          type: DECREMENT,
+          value: 1,
+        }
+        store.dispatch(action)
+      })
+
+      const increment10Button = document.getElementById('incrementBy10');
+      increment10Button.addEventListener('click', () => {
+        const action = {
+          type: 'INCREMENT',
+          value: 10,
+        }
+        store.dispatch(action)
+      })
+
+      store.subscribe(() => {
+        const span = document.getElementById('value');
+        console.log(span);
+        span.innerText = store.getState();
+      })
   </script>
 </body>
 
