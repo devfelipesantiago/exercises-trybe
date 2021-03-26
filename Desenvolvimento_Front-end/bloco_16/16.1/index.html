@@ -20,12 +20,12 @@
       const INCREMENT = 'INCREMENT';
       const DECREMENT = 'DECREMENT';
 
-    const counterReducer = (state = 0, action) => {
+        const counterReducer = (state = { contador: 0, user: [] }, action) => {
       switch (action.type) {
         case 'INCREMENT':
-          return state + action.value;
+          return { ...state, contator: state.contador + action.value }
         case 'DECREMENT':
-          return state - action.value;
+          return { ...state, contator: state.contador - action.value };
         default:
           return state;
       }
@@ -62,7 +62,7 @@
       store.subscribe(() => {
         const span = document.getElementById('value');
         console.log(span);
-        span.innerText = store.getState();
+        span.innerText = store.getState().contador;
       })
   </script>
 </body>
