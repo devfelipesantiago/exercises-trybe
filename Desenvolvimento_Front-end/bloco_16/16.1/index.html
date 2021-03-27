@@ -17,53 +17,55 @@
     <button id="incrementBy10">Incremente 10</button>
   </div>
   <script>
-      const INCREMENT = 'INCREMENT';
-      const DECREMENT = 'DECREMENT';
+    const INCREMENT = 'INCREMENT';
+    const DECREMENT = 'DECREMENT';
 
-        const counterReducer = (state = { contador: 0, user: [] }, action) => {
+    const counterReducer = (state = { contador: 0, user: [] }, action) => {
+      let contador;
       switch (action.type) {
         case 'INCREMENT':
-          return { ...state, contator: state.contador + action.value }
+          contador = state.contador + action.value;
+          return { ...state, contador }
         case 'DECREMENT':
-          return { ...state, contator: state.contador - action.value };
+          contador = state.contador - action.value;
+          return { ...state, contator };
         default:
           return state;
       }
     };
-      const store = Redux.createStore(counterReducer);
+    const store = Redux.createStore(counterReducer);
 
-      const incrementButton = document.getElementById('increment');
-      incrementButton.addEventListener('click', () => {
-        const action = {
-          type: INCREMENT,
-          value: 1,
-        }
-        store.dispatch(action)
-      })
+    const incrementButton = document.getElementById('increment');
+    incrementButton.addEventListener('click', () => {
+      const action = {
+        type: INCREMENT,
+        value: 1,
+      }
+      store.dispatch(action)
+    })
 
-      const decrementButton = document.getElementById('decrement');
-      decrementButton.addEventListener('click', () => {
-        const action = {
-          type: DECREMENT,
-          value: 1,
-        }
-        store.dispatch(action)
-      })
+    const decrementButton = document.getElementById('decrement');
+    decrementButton.addEventListener('click', () => {
+      const action = {
+        type: DECREMENT,
+        value: 1,
+      }
+      store.dispatch(action)
+    })
 
-      const increment10Button = document.getElementById('incrementBy10');
-      increment10Button.addEventListener('click', () => {
-        const action = {
-          type: 'INCREMENT',
-          value: 10,
-        }
-        store.dispatch(action)
-      })
+    const increment10Button = document.getElementById('incrementBy10');
+    increment10Button.addEventListener('click', () => {
+      const action = {
+        type: 'INCREMENT',
+        value: 10,
+      }
+      store.dispatch(action)
+    })
 
-      store.subscribe(() => {
-        const span = document.getElementById('value');
-        console.log(span);
-        span.innerText = store.getState().contador;
-      })
+    store.subscribe(() => {
+      const span = document.getElementById('value');
+      span.innerText = store.getState().contador;
+    })
   </script>
 </body>
 
