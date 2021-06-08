@@ -1,1 +1,1 @@
-db.movies.updateOne({ title: "Batman" }, { $push: { category: "action" } }, { upsert: true });
+db.movies.updateOne({ title: "Batman" }, { $addToSet: { category: "action" } });
