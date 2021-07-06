@@ -1,4 +1,8 @@
 const { expect } = require('chai');
+const sinon = require('sinon');
+const { MongoClient } = require('mongodb');
+const { MongoMemoryServer } = require('mongodb-memory-server');
+
 const MoviesModel = require('../../model/movieModel');
 
 describe('Insere um novo filme no BD', () => {
@@ -7,6 +11,25 @@ describe('Insere um novo filme no BD', () => {
     directedBy: 'Jane Dow',
     releaseYear: 1999,
   };
+
+  before(async () => {
+
+    const DBServer = new MongoMemoryServer();
+    const URLMock = await DBServer.getUri();
+
+    const connectionMock = await MongoClient
+      .connect(URLMock, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      });
+
+    sinon.stub(MongoClient, 'connect').resolves(connectionMock);
+  });
+
+  // Restauraremos a função `connect` original após os testes.
+  after(() => {
+    MongoClient.connect.restore();
+  });
 
   describe('quando é inserido com sucesso', async () => {
 
