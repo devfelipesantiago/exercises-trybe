@@ -37,9 +37,29 @@ const percentageGradesIntoLetters = ({ name, disciplines, school }) => ({
   school,
   disciplines: disciplines.map(getLetterGrades)});
 
-/* "Determinar" */
-const approvedStudents = ({ disciplines }) =>
-  disciplines.every(({ grade }) => grade > 0.7);
+  const SCHOOL_DATA = {
+    Standard: {
+      approvalGrade: 0.7
+    },
+    Hogwarts: {
+      approvalGrade: 0.8
+    }
+  };
+
+  // ...
+
+  /* "Determinar" */
+  const approvedStudents = (disciplines, { approvalGrade }) =>
+    disciplines.every(({ grade }) => grade > approvalGrade);
+
+  // ...
+
+  function setApproved(students) {
+    students
+      .map(percentageGradesIntoLetters)
+      .filter(({ disciplines, school }) => approvedStudents(disciplines, SCHOOL_DATA[school]))
+      .map(updateApprovalData);
+  }
 
 /* "Atualizar" */
 const updateApprovalData = ({ name: studentName, disciplines }) => {
