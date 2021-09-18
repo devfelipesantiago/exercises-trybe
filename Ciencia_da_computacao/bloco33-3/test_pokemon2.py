@@ -41,7 +41,8 @@ def test_retrieve_pokemons_by_type():
         # repare que o nome do arquivo não é importante aqui
         # a esses parâmetros não utilizados damos o nome de dummies
         # como neste contexto alteramos o open pelo mock_open,
-        # o argumento "dummy" poderia ser substituído por qualquer coisa, já que não será utilizado pela função
+        # o argumento "dummy" poderia ser substituído por qualquer coisa,
+        # já que não será utilizado pela função
         assert retrieve_pokemons_by_type("Grass", "dummy") == [
             grass_type_pokemon
         ]
