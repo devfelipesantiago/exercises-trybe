@@ -15,3 +15,6 @@ def create_code():
 
     # Gera um novo char aleatório para cada i do range.
     return "".join(rnd.choice(chars) for i in range(size_code))
+
+
+print(create_code())
