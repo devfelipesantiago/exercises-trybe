@@ -1,3 +1,5 @@
+const file = require('exercises001.js');
+
 const getPlanet = () => {
   const mars = {
     name: "Mars",
@@ -6,7 +8,7 @@ const getPlanet = () => {
       measurementUnit: "kilometers",
     },
   };
-  
+
   setTimeout(() => console.log("Returned planet: ", mars), 4000); // imprime Marte depois de 4 segundos
 };
 
