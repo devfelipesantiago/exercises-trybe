@@ -9,7 +9,7 @@ def start(url):
     source_code = requests.get(url).text  # Faz a requests
 
     soup = BeautifulSoup(source_code, "html.parser")  # Recebe o html em string
-
+    print(soup)
     for each_text in soup.findAll("div", {"class": "entry-content"}):
         content = each_text.text
 
