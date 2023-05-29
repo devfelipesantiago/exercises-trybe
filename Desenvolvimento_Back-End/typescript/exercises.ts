@@ -24,3 +24,15 @@ export function triangleCheck(
   const checkSideC = (sideA - sideB) < sideC && sideC < (sideA + sideB);
   return checkSideA && checkSideB && checkSideC;
 }
+
+export function getRhombusArea(D: number, d: number): number {
+  return (d * D) / 2
+}
+
+export function getTrapezoidArea(B: number, b: number, h: number): number {
+  return ((B + b) * h) / 2
+}
+
+export function getCircleArea(radius: number): number {
+  return Math.PI * radius ** 2;
+}
